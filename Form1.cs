@@ -25,9 +25,11 @@ namespace Quadratic_equation
             var isNumeric_c = int.TryParse(textBox3.Text, out int c);
 
             if (isNumeric_a & isNumeric_b & isNumeric_c) 
-            {                
-                double x1 = (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
-                double x2 = (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
+            {
+                //double x1 = (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
+                double x1 = (2 * c) / (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c)));
+                //double x2 = (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
+                double x2 = (2 * c) / (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c)));
 
                 textBoxSolution1.Text = Convert.ToString(x1);
                 textBoxSolution2.Text = Convert.ToString(x2);
