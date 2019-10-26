@@ -33,6 +33,8 @@ namespace Quadratic_equation
                 double x2 = (2 * c) / (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c)));
 
                 if (a == 0) x1 = x2;
+                if (double.IsNaN(x1)) x1 = 0;
+                if (double.IsNaN(x2)) x2 = 0;
 
                 textBoxSolution1.Text = Convert.ToString(x1);
                 textBoxSolution2.Text = Convert.ToString(x2);
