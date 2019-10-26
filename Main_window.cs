@@ -65,7 +65,7 @@ namespace Quadratic_equation
             var isNumeric_b = int.TryParse(textBox2.Text, out int b);
             var isNumeric_c = int.TryParse(textBox3.Text, out int c);
 
-            int scale = 10;
+            int scale = ClientRectangle.Width / 60;
 
             Pen pen_axis = new Pen(Color.Gray, 2);
 
@@ -117,7 +117,8 @@ namespace Quadratic_equation
             var isNumeric_b = int.TryParse(textBox2.Text, out int b);
             var isNumeric_c = int.TryParse(textBox3.Text, out int c);
 
-            int scale = 25;
+            //int scale = 25;
+            int scale = ClientRectangle.Width / 25;
             double step = 0.25;
 
             Pen pen_axis = new Pen(Color.LightGray, 2);
