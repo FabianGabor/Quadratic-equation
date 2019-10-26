@@ -115,10 +115,10 @@ namespace Quadratic_equation
             var isNumeric_b = int.TryParse(textBox2.Text, out int b);
             var isNumeric_c = int.TryParse(textBox3.Text, out int c);
 
-            int scale = 10;
-            double step = 0.5;
+            int scale = 25;
+            double step = 0.25;
 
-            Pen pen_axis = new Pen(Color.Gray, 2);
+            Pen pen_axis = new Pen(Color.LightGray, 2);
 
             double y_coord1, y_coord2;
             double x_coord = -1 * ClientRectangle.Width / 2;
@@ -128,6 +128,45 @@ namespace Quadratic_equation
                         new Point(0,                        ClientRectangle.Height / 2),
                         new Point(ClientRectangle.Width,    ClientRectangle.Height / 2)
                     };
+
+            for (int x = ClientRectangle.Width / 2; x> -ClientRectangle.Width / 2; x -= scale)
+            {
+                Point[] steps =
+                   {
+                        new Point(x, ClientRectangle.Height / 2 - 3),
+                        new Point(x, ClientRectangle.Height / 2 + 3)
+                    };
+                e.Graphics.DrawLines(pen_axis, steps);
+            }
+            for (int x = ClientRectangle.Width / 2; x < ClientRectangle.Width; x += scale)
+            {
+                Point[] steps =
+                   {
+                        new Point(x, ClientRectangle.Height / 2 - 3),
+                        new Point(x, ClientRectangle.Height / 2 + 3)
+                    };
+                e.Graphics.DrawLines(pen_axis, steps);
+            }
+
+            for (int y = ClientRectangle.Height / 2; y > -ClientRectangle.Height / 2; y -= scale)
+            {
+                Point[] steps =
+                   {
+                        new Point(ClientRectangle.Width / 2 - 3, y),
+                        new Point(ClientRectangle.Width / 2 + 3, y)
+                    };
+                e.Graphics.DrawLines(pen_axis, steps);
+            }
+            for (int y = ClientRectangle.Height / 2; y < ClientRectangle.Height; y += scale)
+            {
+                Point[] steps =
+                   {
+                        new Point(ClientRectangle.Width / 2 - 3, y),
+                        new Point(ClientRectangle.Width / 2 + 3, y)
+                    };
+                e.Graphics.DrawLines(pen_axis, steps);
+            }
+
 
             //Draw lines to screen.
             e.Graphics.DrawLines(pen_axis, axis_x);
