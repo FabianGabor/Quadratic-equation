@@ -56,7 +56,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -173,6 +173,9 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Quadratic equation solver";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
