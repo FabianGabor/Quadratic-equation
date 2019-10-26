@@ -38,8 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxSolution1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBoxSolution2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -49,6 +49,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.textBox1.Location = new System.Drawing.Point(142, 126);
             this.textBox1.Name = "textBox1";
@@ -115,6 +116,7 @@
             // 
             // textBoxSolution1
             // 
+            this.textBoxSolution1.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxSolution1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.textBoxSolution1.Location = new System.Drawing.Point(195, 202);
             this.textBoxSolution1.Name = "textBoxSolution1";
@@ -134,6 +136,17 @@
             this.label4.Text = "x₁ =";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // textBoxSolution2
+            // 
+            this.textBoxSolution2.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxSolution2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.textBoxSolution2.Location = new System.Drawing.Point(195, 240);
+            this.textBoxSolution2.Name = "textBoxSolution2";
+            this.textBoxSolution2.ReadOnly = true;
+            this.textBoxSolution2.Size = new System.Drawing.Size(249, 32);
+            this.textBoxSolution2.TabIndex = 105;
+            this.textBoxSolution2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -145,21 +158,11 @@
             this.label5.Text = "x₂ =";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBoxSolution2
-            // 
-            this.textBoxSolution2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.textBoxSolution2.Location = new System.Drawing.Point(195, 240);
-            this.textBoxSolution2.Name = "textBoxSolution2";
-            this.textBoxSolution2.ReadOnly = true;
-            this.textBoxSolution2.Size = new System.Drawing.Size(249, 32);
-            this.textBoxSolution2.TabIndex = 105;
-            this.textBoxSolution2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(584, 361);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxSolution2);
@@ -172,9 +175,11 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quadratic equation solver";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_PaintCurve);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,8 +196,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSolution1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxSolution2;
+        private System.Windows.Forms.Label label5;
     }
 }
 

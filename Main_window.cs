@@ -109,6 +109,64 @@ namespace Quadratic_equation
             }
         }
 
+        private void Form1_PaintCurve(object sender, PaintEventArgs e)
+        {
+            var isNumeric_a = int.TryParse(textBox1.Text, out int a);
+            var isNumeric_b = int.TryParse(textBox2.Text, out int b);
+            var isNumeric_c = int.TryParse(textBox3.Text, out int c);
+
+            int scale = 10;
+            double step = 0.5;
+
+            Pen pen_axis = new Pen(Color.Gray, 2);
+
+            double y_coord1, y_coord2;
+            double x_coord = -1 * ClientRectangle.Width / 2;
+
+            Point[] axis_x =
+                    {
+                        new Point(0,                        ClientRectangle.Height / 2),
+                        new Point(ClientRectangle.Width,    ClientRectangle.Height / 2)
+                    };
+
+            //Draw lines to screen.
+            e.Graphics.DrawLines(pen_axis, axis_x);
+
+            Point[] axis_y =
+                   {
+                        new Point(ClientRectangle.Width / 2, 0),
+                        new Point(ClientRectangle.Width / 2, ClientRectangle.Height)
+                    };
+
+            //Draw lines to screen.
+            e.Graphics.DrawLines(pen_axis, axis_y);
+
+            Pen pen = new Pen(Color.Red, 3);
+
+            if (isNumeric_a & isNumeric_b & isNumeric_c)
+            {
+                //for (int x_coord = (-ClientRectangle.Width / 2); x_coord < ClientRectangle.Width / 2; x_coord++)
+                while (x_coord < ClientRectangle.Width / 2)
+                {
+                    y_coord1 = a * x_coord * x_coord + b * x_coord + c;
+                    y_coord2 = a * (x_coord + step) * (x_coord + step) + b * (x_coord + step) + c;
+
+                    Point[] points =
+                            {
+                               new Point( Convert.ToInt32(x_coord * scale + ClientRectangle.Width/2),         Convert.ToInt32(-y_coord1 * scale + ClientRectangle.Height/2)),
+                               new Point( Convert.ToInt32((x_coord + step) * scale + ClientRectangle.Width/2),   Convert.ToInt32(-y_coord2 * scale + ClientRectangle.Height/2))
+                            };
+
+                    //Draw lines to screen.
+                    e.Graphics.DrawLines(pen, points);
+
+                    Console.WriteLine(y_coord1);
+
+                    x_coord += step;
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Solve();
