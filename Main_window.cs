@@ -119,11 +119,12 @@ namespace Quadratic_equation
 
             //int scale = 25;
             int scale = ClientRectangle.Width / 25;
-            double step = 0.25;
+            //double step = 0.25;
+            double step = 0.5;
 
             Pen pen_axis = new Pen(Color.LightGray, 2);
 
-            double y_coord1, y_coord2;
+            double y_coord1, y_coord2, y_coord3;
             double x_coord = -1 * ClientRectangle.Width / 2;
 
             Point[] axis_x =
@@ -183,7 +184,8 @@ namespace Quadratic_equation
             //Draw lines to screen.
             e.Graphics.DrawLines(pen_axis, axis_y);
 
-            Pen pen = new Pen(Color.Red, 3);
+            Pen redPen      = new Pen(Color.Red, 3);
+            Pen greenPen    = new Pen(Color.Green, 2);
 
             if (isNumeric_a & isNumeric_b & isNumeric_c)
             {
@@ -192,6 +194,7 @@ namespace Quadratic_equation
                 {
                     y_coord1 = a * x_coord * x_coord + b * x_coord + c;
                     y_coord2 = a * (x_coord + step) * (x_coord + step) + b * (x_coord + step) + c;
+                    y_coord3 = a * (x_coord - step) * (x_coord - step) + b * (x_coord - step) + c;
 
                     Point[] points =
                             {
@@ -199,8 +202,21 @@ namespace Quadratic_equation
                                new Point( Convert.ToInt32((x_coord + step) * scale + ClientRectangle.Width/2),   Convert.ToInt32(-y_coord2 * scale + ClientRectangle.Height/2))
                             };
 
+                    Point[] curvePoints =
+                        {                            
+                            new Point( Convert.ToInt32((x_coord - step) * scale + ClientRectangle.Width/2),      Convert.ToInt32(-y_coord3 * scale + ClientRectangle.Height/2)),
+                            new Point( Convert.ToInt32(x_coord * scale + ClientRectangle.Width/2),               Convert.ToInt32(-y_coord1 * scale + ClientRectangle.Height/2)),
+                            new Point( Convert.ToInt32((x_coord + step) * scale + ClientRectangle.Width/2),      Convert.ToInt32(-y_coord2 * scale + ClientRectangle.Height/2))
+                        };
+
+                    //Point point1 = new Point( Convert.ToInt32((x_coord - step) * scale + ClientRectangle.Width/2),      Convert.ToInt32(-y_coord3 * scale + ClientRectangle.Height/2));
+                    //Point point2 = new Point( Convert.ToInt32(x_coord * scale + ClientRectangle.Width/2),               Convert.ToInt32(-y_coord1 * scale + ClientRectangle.Height/2));
+                    //Point point3 = new Point( Convert.ToInt32((x_coord + step) * scale + ClientRectangle.Width/2),      Convert.ToInt32(-y_coord2 * scale + ClientRectangle.Height/2));
+                    //Point[] curvePoints = {point1, point2, point3};
+
                     //Draw lines to screen.
-                    e.Graphics.DrawLines(pen, points);
+                    //e.Graphics.DrawLines(pen, points);
+                    e.Graphics.DrawCurve(redPen, curvePoints);
 
                     x_coord += step;
                 }
