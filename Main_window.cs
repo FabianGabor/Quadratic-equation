@@ -29,15 +29,24 @@ namespace Quadratic_equation
                 //double x1 = (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
                 //double x2 = (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
 
-                double x1 = (2 * c) / (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c)));             
-                double x2 = (2 * c) / (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c)));
+                double dis = Math.Sqrt(Math.Pow(b, 2) - (4 * a * c));
+                double x1 = (2 * c) / (-b + dis);             
+                double x2 = (2 * c) / (-b - dis);
 
                 if (a == 0) x1 = x2;
                 if (double.IsNaN(x1)) x1 = 0;
                 if (double.IsNaN(x2)) x2 = 0;
 
-                textBoxSolution1.Text = Convert.ToString(x1);
-                textBoxSolution2.Text = Convert.ToString(x2);
+                if (dis >= 0)
+                {
+                    textBoxSolution1.Text = Convert.ToString(x1);
+                    textBoxSolution2.Text = Convert.ToString(x2);
+                }
+                else
+                {
+                    textBoxSolution1.Text = "NO";
+                    textBoxSolution2.Text = "NO";
+                }
 
                 this.Refresh();
             }
@@ -215,7 +224,7 @@ namespace Quadratic_equation
                     //Point[] curvePoints = {point1, point2, point3};
 
                     //Draw lines to screen.
-                    //e.Graphics.DrawLines(pen, points);
+                    e.Graphics.DrawLines(greenPen, points);
                     e.Graphics.DrawCurve(redPen, curvePoints);
 
                     x_coord += step;
