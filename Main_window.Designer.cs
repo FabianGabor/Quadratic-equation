@@ -37,9 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxSolution2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSolution2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxSolution1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,17 +137,17 @@
             this.panel1.Size = new System.Drawing.Size(340, 180);
             this.panel1.TabIndex = 107;
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 20);
-            this.label4.TabIndex = 104;
-            this.label4.Text = "x₁";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(185, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 20);
+            this.label5.TabIndex = 106;
+            this.label5.Text = "x₂";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBoxSolution2
             // 
@@ -160,17 +160,17 @@
             this.textBoxSolution2.TabIndex = 105;
             this.textBoxSolution2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // label4
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(185, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 20);
-            this.label5.TabIndex = 106;
-            this.label5.Text = "x₂";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 20);
+            this.label4.TabIndex = 104;
+            this.label4.Text = "x₁";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBoxSolution1
             // 
