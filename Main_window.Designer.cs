@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -41,13 +39,9 @@
             this.textBoxSolution2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxSolution1 = new System.Windows.Forms.TextBox();
+            this.GitHub_link = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // textBox1
             // 
@@ -184,12 +178,29 @@
             this.textBoxSolution1.TabIndex = 102;
             this.textBoxSolution1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // GitHub_link
+            // 
+            this.GitHub_link.AutoSize = true;
+            this.GitHub_link.Dock = System.Windows.Forms.DockStyle.Right;
+            this.GitHub_link.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.GitHub_link.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.GitHub_link.Location = new System.Drawing.Point(443, 0);
+            this.GitHub_link.Name = "GitHub_link";
+            this.GitHub_link.Padding = new System.Windows.Forms.Padding(10);
+            this.GitHub_link.Size = new System.Drawing.Size(141, 33);
+            this.GitHub_link.TabIndex = 108;
+            this.GitHub_link.TabStop = true;
+            this.GitHub_link.Text = "Fábián Gábor @ GitHub";
+            this.GitHub_link.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.GitHub_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitHub_link_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.GitHub_link);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Quadratic equation solver";
@@ -199,11 +210,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -215,6 +226,7 @@
         private System.Windows.Forms.TextBox textBoxSolution2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxSolution1;
+        private System.Windows.Forms.LinkLabel GitHub_link;
     }
 }
 

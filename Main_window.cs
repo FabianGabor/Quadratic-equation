@@ -229,12 +229,22 @@ namespace Quadratic_equation
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Solve();
+            Solve();            
         }
 
         private void Form1_Resize(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GitHub_link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/FabianGabor/Quadratic-equation");
         }
     }
 }
